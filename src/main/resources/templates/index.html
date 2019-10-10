@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+    <!-- Link to the bootstrap stylesheet:  insert this just before the </head> tag  (this version fits on a page) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <!-- END Link to the bootstrap stylesheet -->
+</head>
+<style>
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 5px;
+}
+</style>
+<body>
+    <!-- Navigation Bar -->
+    <div th:replace="base :: navlinks"></div>
+    <!-- End Navigation Bar -->
+
+    <!-- Header -->
+    <div th:replace="base :: header"></div>
+    <!-- End Header -->
+
+    <!-- Process HTML Page -->
+
+    <!-- End Process HTML Page-->
+
+    <!-- Footer -->
+    <div th:replace="base :: footer"></div>
+    <!-- End Footer -->
+
+    <!-- JS code: insert this just before the </body> tag  (this version fits on a page) -->
+    <div th:replace="base :: jsFooter"></div>
+    <!-- END JS code -->
+</body>
+</html>
