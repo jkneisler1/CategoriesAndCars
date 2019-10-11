@@ -26,27 +26,37 @@ hr {
     <div th:replace="base :: navlinks"></div>
     <!-- End Navigation Bar -->
 
-    <!-- Header -->
-    <div th:replace="base :: header"></div>
-    <!-- End Header -->
+    <div class="container">
+        <!-- Header -->
+        <div th:replace="base :: header"></div>
+        <!-- End Header -->
 
-    <!-- Process HTML Page -->
-    <form action="#" th:action="@{/process_category}" th:object="${category}" method="post">
-        <input type="hidden" th:field="*{categoryID}" />
+        <!-- Process HTML Page -->
+        <form action="#" th:action="@{/process_category}" th:object="${category}" method="post">
+            <input type="hidden" th:field="*{categoryID}" />
 
-        Name: <input type="text" th:field="*{categoryName}"><br />
-        <span th:if="${#fields.hasErrors('categoryName')}" th:errors="*{categoryName}"></span><br />
+            Name: <input type="text" th:field="*{categoryName}"><br />
+            <span th:if="${#fields.hasErrors('categoryName')}" th:errors="*{categoryName}"></span><br />
 
-        Description: <input type="text" th:field="*{description}"><br />
-        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span><br />
+            Description: <input type="text" th:field="*{description}"><br />
+            <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span><br />
 
-        <input type="submit" value="Submit">
-    </form>
-    <!-- End Process HTML Page-->
+            <select name="car" th:field="*{cars}">
+                <option th:each="car : ${category.cars}"
+                        th:value="${car.carID}"
+                        th:text="${car.carMake}"
+                        th:text="${car.carModel}">
+                </option>
+            </select>
 
-    <!-- Footer -->
-    <div th:replace="base :: footer"></div>
-    <!-- End Footer -->
+            <input type="submit" value="Submit">
+        </form>
+        <!-- End Process HTML Page-->
+
+        <!-- Footer -->
+        <div th:replace="base :: footer"></div>
+        <!-- End Footer -->
+    </div>
 
     <!-- JS code: insert this just before the </body> tag  (this version fits on a page) -->
     <div th:replace="base :: jsFooter"></div>

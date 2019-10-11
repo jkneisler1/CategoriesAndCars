@@ -26,51 +26,53 @@ hr {
     <div th:replace="base :: navlinks"></div>
     <!-- End Navigation Bar -->
 
-    <!-- Header -->
-    <div th:replace="base :: header"></div>
-    <!-- End Header -->
-
-    <!-- Process HTML Page -->
     <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <table>
-                    <tr>
-                        <th>Category Name</th>
-                    </tr>
-                    <tr th:each="category : ${categorys}">
-                        <td th:text="${category.categoryName}"></td>
-                        <td>
-                            <a th:href="@{update/{id}(id=${category.categoryID})}">Update</a>
-                            <a th:href="@{detail/{id}(id=${category.categoryID})}">Details</a>
-                            <a th:href="@{delete/{id}(id=${category.categoryID})}">Delete</a>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-sm-6">
-                <table>
-                    <tr>
-                        <th>Make</th>
-                        <th>Model</th>
-                        <th>Category</th>
-                    </tr>
+        <!-- Header -->
+        <div th:replace="base :: header"></div>
+        <!-- End Header -->
 
-                    <tr th:each="car : ${cars}">
-                        <td th:text="${car.carMake}"></td>
-                        <td th:text="${car.carModel}"></td>
-                        <td th:text="${car.category.categoryName}"></td>
-                        <td>
-                            <a th:href="@{update_car/{id}(id=${car.carID})}">Update</a>
-                            <a th:href="@{detail_car/{id}(id=${car.carID})}">Details</a>
-                            <a th:href="@{delete_car/{id}(id=${car.carID})}">Delete</a>
-                        </td>
-                    </tr>
-                </table>
+        <!-- Process HTML Page -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <table>
+                        <tr>
+                            <th>Category Name</th>
+                        </tr>
+                        <tr th:each="category : ${categorys}">
+                            <td th:text="${category.categoryName}"></td>
+                            <td>
+                                <a th:href="@{update_category/{id}(id=${category.categoryID})}">Update</a>
+                                <a th:href="@{detail_category/{id}(id=${category.categoryID})}">Details</a>
+                                <a th:href="@{delete_category/{id}(id=${category.categoryID})}">Delete</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-sm-6">
+                    <table>
+                        <tr>
+                            <th>Make</th>
+                            <th>Model</th>
+                            <th>Category</th>
+                        </tr>
+
+                        <tr th:each="car : ${cars}">
+                            <td th:text="${car.carMake}"></td>
+                            <td th:text="${car.carModel}"></td>
+                            <td th:text="${car.category.categoryName}"></td>
+                            <td>
+                                <a th:href="@{update_car/{id}(id=${car.carID})}">Update</a>
+                                <a th:href="@{detail_car/{id}(id=${car.carID})}">Details</a>
+                                <a th:href="@{delete_car/{id}(id=${car.carID})}">Delete</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
+        <!-- End Process HTML Page-->
     </div>
-    <!-- End Process HTML Page-->
 
     <!-- Footer -->
     <div th:replace="base :: footer"></div>

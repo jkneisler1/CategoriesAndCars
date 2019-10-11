@@ -31,18 +31,19 @@ hr {
 
     <!-- Navigation Bar -->
     <div th:fragment="navlinks">
-        <nav class="navbar navbar-expand-sm bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Cars-<span style="font-size:30px">&#x1D19;</span>-Us</a>
 
             <!-- Links -->
-            <ul class="navbar-nav">
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="/">HomePage</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/XXXX">View XXXX</a>
+                    <a class="nav-link" href="/categorylist">List Categories</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/YYYY">View YYYY</a>
+                    <a class="nav-link" href="/carlist">List Cars</a>
                 </li>
 
                 <!-- Dropdown -->
@@ -56,15 +57,16 @@ hr {
                     </div>
                 </li>
                 <li class="nav-item">
-                    <form class="form-inline my-2 my-lg-0" th:action="@{/process_category}" method="post">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Enter Category" aria-label="Search Category" name="search">
+                    <form class="form-inline my-2 my-lg-0" th:action="@{/processCategoryByName}" method="post">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Enter Category Name" aria-label="Search Category" name="search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Retrieve Category</button>
                     </form>
                 </li>
                 <li class="nav-item">
-                    <form class="form-inline my-2 my-lg-0" th:action="@{/process_category}" method="post">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Enter Category" aria-label="Search Category" name="search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Retrieve Category</button>
+                    <form class="form-inline my-2 my-lg-0" th:action="@{/processCarByMake}" method="post">
+<!--^    +    ^    +    ^    +    ^    +    ^    +    ^    +    ^    +    ^    +    ^    +    ^    +  -->
+                        <input class="form-control mr-sm-2" type="search" placeholder="Enter Car Make" aria-label="Search Car" name="search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Retrieve Car</button>
                     </form>
                 </li>
             </ul>
@@ -81,10 +83,10 @@ hr {
         </form>
     </div>
 
-    <div th:fragment="searchCategoryNavBtn">
-        <form class="form-inline my-2 my-lg-0" th:action="@{/process_category}" method="post">
+    <div th:fragment="searchCarNavBtn">
+        <form class="form-inline my-2 my-lg-0" th:action="@{/process_car}" method="post">
             <input class="form-control mr-sm-2" type="search" placeholder="Enter Category" aria-label="Search Category" name="search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Retrieve Category</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Retrieve Car</button>
         </form>
     </div>
     <!-- End Process HTML Page-->
@@ -92,6 +94,8 @@ hr {
     <!-- Footer -->
     <div th:fragment="footer">
         <footer>
+            <br />
+            <br />
             <p>Copyright 2019</p>
         </footer>
     </div>

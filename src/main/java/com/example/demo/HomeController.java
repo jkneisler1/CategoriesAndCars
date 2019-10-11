@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -44,6 +41,12 @@ public class HomeController {
         return "redirect:/categorylist";
     }
 
+    @PostMapping("/processCategoryByName")
+    public String processCatNameSearch(Model model, @RequestParam(name="search") String search) {
+        model.addAttribute("categorys", categoryRepository.findCategoryByCategoryNameContaining(search));
+        return "/categorylist";
+    }
+
     @RequestMapping("/categorylist")
     public String categoryList(Model model) {
         model.addAttribute("categorys", categoryRepository.findAll());
@@ -66,6 +69,12 @@ public class HomeController {
         carRepository.save(car);
 
         return "redirect:/carlist";
+    }
+
+    @PostMapping("/processCarByMake")
+    public String processCarByMakeSearch(Model model, @RequestParam(name="search") String search) {
+        model.addAttribute("cars", carRepository.findCarsByCarMakeContains(search));
+        return "/carlist";
     }
 
     @RequestMapping("/carlist")

@@ -26,34 +26,44 @@ hr {
     <div th:replace="base :: navlinks"></div>
     <!-- End Navigation Bar -->
 
-    <!-- Header -->
-    <div th:replace="base :: header"></div>
-    <!-- End Header -->
+    <div class="container">
+        <!-- Header -->
+        <div th:replace="base :: header"></div>
+        <!-- End Header -->
 
-    <!-- Process HTML Page -->
-    <form action="#" th:action="@{/process_car}" th:object="${car}" method="post">
-        <input type="hidden" th:field="*{carID}">
+        <!-- Process HTML Page -->
+        <form action="#" th:action="@{/process_car}" th:object="${car}" method="post">
+            <input type="hidden" th:field="*{carID}" />
+<!--^    +    ^    +    ^    +    ^    +    ^    +    ^    +    ^    +    ^    +    ^    +    ^    +  -->
+            Make: <input type="text" th:field="*{carMake}"><br />
+            <span th:if="${#fields.hasErrors('carMake')}" th:errors="*{carMake}"></span><br />
 
-        Make: <input type="text" th:field="*{carMake}"><br />
-        <span th:if="${#fields.hasErrors('carMake')}" th:errors="*{carMake}"></span><br />
+            Model: <input type="text" th:field="*{carModel}"><br />
+            <span th:if="${#fields.hasErrors('carModel')}" th:errors="*{carModel}"></span><br />
 
-        Model: <input type="text" th:field="*{carModel}"><br />
-        <span th:if="${#fields.hasErrors('carModel')}" th:errors="*{carModel}"></span><br />
+            VIN: <input type="text" th:field="*{carVin}"><br />
+            <span th:if="${#fields.hasErrors('carVin')}" th:errors="*{carVin}"></span><br />
 
+            MSRP: <input type="number" th:field="*{msrp}"><br />
+            <span th:if="${#fields.hasErrors('msrp')}" th:errors="*{msrp}"></span><br />
 
-        <select name="category" th:field="*{category}">
-            <option th:each="category : ${categorys}"
-                    th:value="${category.categoryID}"
-                    th:text="${category.categoryName}">
-            </option>
-        </select>
-        <input type="submit" value="Submit">
-    </form>
-    <!-- End Process HTML Page-->
+            Color: <input type="text" th:field="*{color}"><br />
+            <span th:if="${#fields.hasErrors('color')}" th:errors="*{color}"></span><br />
 
-    <!-- Footer -->
-    <div th:replace="base :: footer"></div>
-    <!-- End Footer -->
+            Year: <input type="number" th:field="*{year}"><br />
+            <span th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></span><br />
+
+            Category: <input type="number" th:field="*{category}"><br />
+            <span th:if="${#fields.hasErrors('category')}" th:errors="*{category}"></span><br />
+
+            <input type="submit" value="Submit">
+        </form>
+        <!-- End Process HTML Page-->
+
+        <!-- Footer -->
+        <div th:replace="base :: footer"></div>
+        <!-- End Footer -->
+    </div>
 
     <!-- JS code: insert this just before the </body> tag  (this version fits on a page) -->
     <div th:replace="base :: jsFooter"></div>

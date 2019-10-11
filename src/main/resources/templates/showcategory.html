@@ -26,18 +26,35 @@ hr {
     <div th:replace="base :: navlinks"></div>
     <!-- End Navigation Bar -->
 
-    <!-- Header -->
-    <div th:replace="base :: header"></div>
-    <!-- End Header -->
+    <div class="container">
+        <!-- Header -->
+        <div th:replace="base :: header"></div>
+        <!-- End Header -->
 
-    <!-- Process HTML Page -->
-    ID: <span th:text="${category.categoryID}"></span><br />
-    Category: <span th:text="${category.categoryName}"></span><br />
-    <!-- End Process HTML Page-->
+        <!-- Process HTML Page -->
+        <br />
+        <h3>Category</h3>
+        <br />
+        <div class="row">
+            <div class="col-md-12"><h3>Category</h3></div>
+            <br />
+        </div>
+        <div class="row">
+            <div class="col-md-1"><b>Name:</b></div>
+            <div class="col-md-11"><span th:text="${category.categoryName}"></span></div>
+            <br />
+        </div>
+        <div class="row">
+            <div class="col-md-1"><b>Description:</b></div>
+            <div class="col-md-11"><span th:text="${category.description}"></span></div>
+            <br />
+        </div>
+        <!-- End Process HTML Page-->
 
-    <!-- Footer -->
-    <div th:replace="base :: footer"></div>
-    <!-- End Footer -->
+        <!-- Footer -->
+        <div th:replace="base :: footer"></div>
+        <!-- End Footer -->
+    </div>
 
     <!-- JS code: insert this just before the </body> tag  (this version fits on a page) -->
     <div th:replace="base :: jsFooter"></div>

@@ -19,7 +19,7 @@ public class DataLoader implements CommandLineRunner {
         Car car;                // Make, Model, VIN, Price, Color, Year
 
         // First category and their cars
-        category = new Category("Sports Car", "Sports cars are designed to emphasise handling, performance or thrill of driving. Sports cars originated in Europe in the early 1900s, with one of the first recorded usages of the term \\\"sports car\\\" being in The Times newspaper in the UK in 1919.");
+        category = new Category("Sports Car", "Sports cars are designed to emphasise handling, performance or thrill of driving. Sports cars originated in Europe in the early 1900s, with one of the first recorded usages of the term sports car being in The Times newspaper in the UK in 1919.");
         categoryRepository.save(category);
 
         car = new Car("Chevrolet", "Corvette", "CC1001", 58900.0, "Red", 2020, category);

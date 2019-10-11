@@ -26,19 +26,42 @@ hr {
     <div th:replace="base :: navlinks"></div>
     <!-- End Navigation Bar -->
 
-    <!-- Header -->
-    <div th:replace="base :: header"></div>
-    <!-- End Header -->
+    <div class="container">
+        <!-- Header -->
+        <div th:replace="base :: header"></div>
+        <!-- End Header -->
 
-    <!-- Process HTML Page -->
-    Make: <span th:text="${car.carMake}"></span><br />
-    Model: <span th:text="${car.carModel}"></span><br />
-    Category: <span th:text="${car.category.categoryName}"></span><br />
-    <!-- End Process HTML Page-->
+        <!-- Process HTML Page -->
+        <br />
+        <h3>Cars</h3>
+        <br />
+        <div class="row">
+            <div class="col-md-1"><b>Make:</b></div>
+            <div class="col-md-5"><span th:text="${car.carMake}"></span></div>
+            <div class="col-md-1"><b>Model:</b></div>
+            <div class="col-md-5"><span th:text="${car.carModel}"></span></div>
+            <br />
+        </div>
+        <div class="row">
+            <div class="col-md-1"><b>MSRP:</b></div>
+            <div class="col-md-5">$<span th:inline="text">[[${#numbers.formatDecimal(car.msrp, 0, 'COMMA', 2, 'POINT')}]]</span></div>
+            <div class="col-md-1"><b>Year:</b></div>
+            <div class="col-md-5"><span th:text="${car.year}"></span></div>
+            <br />
+        </div>
+        <div class="row">
+            <div class="col-md-1"><b>Color:</b></div>
+            <div class="col-md-5"><span th:text="${car.color}"></span></div>
+            <div class="col-md-1"><b>Category:</b></div>
+            <div class="col-md-5"><span th:text="${car.category.categoryName}"></span></div>
+            <br />
+        </div>
+        <!-- End Process HTML Page-->
 
-    <!-- Footer -->
-    <div th:replace="base :: footer"></div>
-    <!-- End Footer -->
+        <!-- Footer -->
+        <div th:replace="base :: footer"></div>
+        <!-- End Footer -->
+    </div>
 
     <!-- JS code: insert this just before the </body> tag  (this version fits on a page) -->
     <div th:replace="base :: jsFooter"></div>
