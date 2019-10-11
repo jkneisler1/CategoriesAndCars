@@ -32,30 +32,71 @@ hr {
         <!-- End Header -->
 
         <!-- Process HTML Page -->
+        <br />
+        <h3>Car Input Form</h3>
+        <br />
         <form action="#" th:action="@{/process_car}" th:object="${car}" method="post">
             <input type="hidden" th:field="*{carID}" />
 <!--^    +    ^    +    ^    +    ^    +    ^    +    ^    +    ^    +    ^    +    ^    +    ^    +  -->
-            Make: <input type="text" th:field="*{carMake}"><br />
-            <span th:if="${#fields.hasErrors('carMake')}" th:errors="*{carMake}"></span><br />
-
-            Model: <input type="text" th:field="*{carModel}"><br />
-            <span th:if="${#fields.hasErrors('carModel')}" th:errors="*{carModel}"></span><br />
-
-            VIN: <input type="text" th:field="*{carVin}"><br />
-            <span th:if="${#fields.hasErrors('carVin')}" th:errors="*{carVin}"></span><br />
-
-            MSRP: <input type="number" th:field="*{msrp}"><br />
-            <span th:if="${#fields.hasErrors('msrp')}" th:errors="*{msrp}"></span><br />
-
-            Color: <input type="text" th:field="*{color}"><br />
-            <span th:if="${#fields.hasErrors('color')}" th:errors="*{color}"></span><br />
-
-            Year: <input type="number" th:field="*{year}"><br />
-            <span th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></span><br />
-
-            Category: <input type="number" th:field="*{category}"><br />
-            <span th:if="${#fields.hasErrors('category')}" th:errors="*{category}"></span><br />
-
+            <div class="row">
+                <div class="col-md-1"><b>Make:</b></div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{carMake}" size="40" />
+                    <span th:if="${#fields.hasErrors('carMake')}" th:errors="*{carMake}"></span>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-1"><b>Model:</b></div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{carModel}" size="40" />
+                    <span th:if="${#fields.hasErrors('carModel')}" th:errors="*{carModel}"></span>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-1"><b>VIN:</b></div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{carVin}" size="40" />
+                    <span th:if="${#fields.hasErrors('carVin')}" th:errors="*{carVin}"></span>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-1"><b>MSRP:</b></div>
+                <div class="col-md-11">
+                    <input type="number" th:field="*{msrp}" size="40" />
+                    <span th:if="${#fields.hasErrors('msrp')}" th:errors="*{msrp}"></span>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-1"><b>Color:</b></div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{color}" size="40" />
+                    <span th:if="${#fields.hasErrors('color')}" th:errors="*{color}"></span>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-1"><b>Year:</b></div>
+                <div class="col-md-11">
+                    <input type="number" th:field="*{year}" size="40" />
+                    <span th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></span>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <select name="category" th:field="*{categorys}">
+                        <option th:each="category : ${categorys}"
+                                th:value="${category.categoryID}"
+                                th:text="${category.categoryName}">
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <br />
             <input type="submit" value="Submit">
         </form>
         <!-- End Process HTML Page-->

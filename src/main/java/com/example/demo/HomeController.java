@@ -56,8 +56,8 @@ public class HomeController {
 
     @GetMapping("/addcar")
     public String carForm(Model model) {
-        model.addAttribute("categories", categoryRepository.findAll());
-        model.addAttribute("cars", carRepository.findAll());
+        model.addAttribute("categorys", categoryRepository.findAll());
+        model.addAttribute("car", new Car());
         return "carform";
     }
 

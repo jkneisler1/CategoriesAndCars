@@ -32,23 +32,28 @@ hr {
         <!-- End Header -->
 
         <!-- Process HTML Page -->
+        <br />
+        <h3>Category Input Form</h3>
+        <br />
         <form action="#" th:action="@{/process_category}" th:object="${category}" method="post">
             <input type="hidden" th:field="*{categoryID}" />
 
-            Name: <input type="text" th:field="*{categoryName}"><br />
-            <span th:if="${#fields.hasErrors('categoryName')}" th:errors="*{categoryName}"></span><br />
-
-            Description: <input type="text" th:field="*{description}"><br />
-            <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span><br />
-
-            <select name="car" th:field="*{cars}">
-                <option th:each="car : ${category.cars}"
-                        th:value="${car.carID}"
-                        th:text="${car.carMake}"
-                        th:text="${car.carModel}">
-                </option>
-            </select>
-
+            <div class="row">
+                <div class="col-md-1"><b>Name:</b></div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{categoryName}" />
+                    <span th:if="${#fields.hasErrors('categoryName')}" th:errors="*{categoryName}"></span>
+                </div>>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-1"><b>Description:</b></div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{description}" />
+                    <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+                </div>
+            </div>
+            <br />
             <input type="submit" value="Submit">
         </form>
         <!-- End Process HTML Page-->
