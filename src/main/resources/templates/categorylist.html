@@ -31,7 +31,16 @@ hr {
     <!-- End Header -->
 
     <!-- Process HTML Page -->
-
+    <table>
+        <tr th:each="category : ${categorys}">
+            <td th:text="${category.categoryName}"></td>
+            <td>
+                <a th:href="@{update/{id}(id=${category.categoryID})}">Update</a>
+                <a th:href="@{detail/{id}(id=${category.categoryID})}">Details</a>
+                <a th:href="@{delete/{id}(id=${category.categoryID})}">Delete</a>
+            </td>
+        </tr>
+    </table>
     <!-- End Process HTML Page-->
 
     <!-- Footer -->

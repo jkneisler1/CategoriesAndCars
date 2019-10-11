@@ -31,7 +31,24 @@ hr {
     <!-- End Header -->
 
     <!-- Process HTML Page -->
+    <form action="#" th:action="@{/process_car}" th:object="${car}" method="post">
+        <input type="hidden" th:field="*{carID}">
 
+        Make: <input type="text" th:field="*{carMake}"><br />
+        <span th:if="${#fields.hasErrors('carMake')}" th:errors="*{carMake}"></span><br />
+
+        Model: <input type="text" th:field="*{carModel}"><br />
+        <span th:if="${#fields.hasErrors('carModel')}" th:errors="*{carModel}"></span><br />
+
+
+        <select name="category" th:field="*{category}">
+            <option th:each="category : ${categorys}"
+                    th:value="${category.categoryID}"
+                    th:text="${category.categoryName}">
+            </option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
     <!-- End Process HTML Page-->
 
     <!-- Footer -->

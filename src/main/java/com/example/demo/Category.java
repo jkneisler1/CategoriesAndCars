@@ -7,7 +7,7 @@ import java.util.Set;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long catagoryID;
+    private long categoryID;
 
     private String categoryName;
     private String description;
@@ -18,18 +18,17 @@ public class Category {
     public Category() {
     }
 
-    public Category(String categoryName, String description, Set<Car> cars) {
+    public Category(String categoryName, String description) {
         this.categoryName = categoryName;
         this.description = description;
-        this.cars = cars;
     }
 
-    public long getCatagoryID() {
-        return catagoryID;
+    public long getCategoryID() {
+        return categoryID;
     }
 
-    public void setCatagoryID(long catagoryID) {
-        this.catagoryID = catagoryID;
+    public void setCategoryID(long categoryID) {
+        this.categoryID = categoryID;
     }
 
     public String getCategoryName() {

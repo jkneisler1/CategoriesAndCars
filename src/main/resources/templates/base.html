@@ -51,15 +51,43 @@ hr {
                         Add Entry
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/AAAA">Add AAAA</a>
-                        <a class="dropdown-item" href="/BBBB">Add BBBB</a>
+                        <a class="dropdown-item" href="/addcategory">Add Category</a>
+                        <a class="dropdown-item" href="/addcar">Add Car</a>
                     </div>
+                </li>
+                <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0" th:action="@{/process_category}" method="post">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Enter Category" aria-label="Search Category" name="search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Retrieve Category</button>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0" th:action="@{/process_category}" method="post">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Enter Category" aria-label="Search Category" name="search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Retrieve Category</button>
+                    </form>
                 </li>
             </ul>
 
         </nav>
     </div>
     <!-- End Navigation Bar -->
+
+    <!-- Process HTML Page -->
+    <div th:fragment="searchCategoryNavBtn">
+        <form class="form-inline my-2 my-lg-0" th:action="@{/process_category}" method="post">
+            <input class="form-control mr-sm-2" type="search" placeholder="Enter Category" aria-label="Search Category" name="search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Retrieve Category</button>
+        </form>
+    </div>
+
+    <div th:fragment="searchCategoryNavBtn">
+        <form class="form-inline my-2 my-lg-0" th:action="@{/process_category}" method="post">
+            <input class="form-control mr-sm-2" type="search" placeholder="Enter Category" aria-label="Search Category" name="search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Retrieve Category</button>
+        </form>
+    </div>
+    <!-- End Process HTML Page-->
 
     <!-- Footer -->
     <div th:fragment="footer">

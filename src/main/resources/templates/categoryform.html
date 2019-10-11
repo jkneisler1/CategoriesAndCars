@@ -31,7 +31,17 @@ hr {
     <!-- End Header -->
 
     <!-- Process HTML Page -->
+    <form action="#" th:action="@{/process_category}" th:object="${category}" method="post">
+        <input type="hidden" th:field="*{categoryID}" />
 
+        Name: <input type="text" th:field="*{categoryName}"><br />
+        <span th:if="${#fields.hasErrors('categoryName')}" th:errors="*{categoryName}"></span><br />
+
+        Description: <input type="text" th:field="*{description}"><br />
+        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span><br />
+
+        <input type="submit" value="Submit">
+    </form>
     <!-- End Process HTML Page-->
 
     <!-- Footer -->
