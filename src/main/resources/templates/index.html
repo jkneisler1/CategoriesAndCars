@@ -31,10 +31,10 @@ hr {
         <div th:replace="base :: header"></div>
         <!-- End Header -->
 
-        <!-- Process HTML Page -->
         <div class="container">
+        <!-- Process HTML Page -->
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-5">
                     <table>
                         <tr>
                             <th>Category Name</th>
@@ -49,7 +49,7 @@ hr {
                         </tr>
                     </table>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-7">
                     <table>
                         <tr>
                             <th>Make</th>
@@ -72,11 +72,11 @@ hr {
             </div>
         </div>
         <!-- End Process HTML Page-->
-    </div>
 
-    <!-- Footer -->
-    <div th:replace="base :: footer"></div>
-    <!-- End Footer -->
+        <!-- Footer -->
+        <div th:replace="base :: footer"></div>
+        <!-- End Footer -->
+    </div>
 
     <!-- JS code: insert this just before the </body> tag  (this version fits on a page) -->
     <div th:replace="base :: jsFooter"></div>

@@ -32,18 +32,10 @@ hr {
         <!-- End Header -->
 
         <!-- Process HTML Page -->
-        <!-- <table>
-            <tr th:each="category : ${categorys}">
-                <td th:text="${category.categoryName}"></td>
-                <td>
-                    <a th:href="@{update/{id}(id=${category.categoryID})}">Update</a>
-                    <a th:href="@{detail/{id}(id=${category.categoryID})}">Details</a>
-                    <a th:href="@{delete/{id}(id=${category.categoryID})}">Delete</a>
-                </td>
-            </tr>
-        </table> -->
         <br />
         <h3>Category</h3>
+        <br />
+        <hr />
         <br />
         <div th:each="category : ${categorys}" >
             <div class="row">
@@ -59,15 +51,16 @@ hr {
                 <div class="col-md-3">
                     <a th:href="@{delete/{id}(id=${category.categoryID})}">Delete</a>
                 </div>
-
             </div>
-            <br />
             <div class="row">
                 <div class="col-md-12">
                     <span th:text="${category.description}"></span>
                 </div>
             </div>
+            <br />
         </div>
+        <br />
+        <hr />
         <!-- End Process HTML Page-->
 
         <!-- Footer -->
