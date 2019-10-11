@@ -43,13 +43,13 @@ hr {
                 <div class="col-md-11">
                     <input type="text" th:field="*{categoryName}" />
                     <span th:if="${#fields.hasErrors('categoryName')}" th:errors="*{categoryName}"></span>
-                </div>>
+                </div>
             </div>
             <br />
             <div class="row">
                 <div class="col-md-1"><b>Description:</b></div>
                 <div class="col-md-11">
-                    <input type="text" th:field="*{description}" />
+                    <textarea rows="4" cols="70" type="text" th:field="*{description}" ></textarea>
                     <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
                 </div>
             </div>

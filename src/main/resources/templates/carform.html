@@ -87,8 +87,9 @@ hr {
             </div>
             <br />
             <div class="row">
-                <div class="col-md-12">
-                    <select name="category" th:field="*{categorys}">
+                <div class="col-md-1"><b>Category:</b></div>
+                <div class="col-md-11">
+                    <select name="category" th:field="*{category}">
                         <option th:each="category : ${categorys}"
                                 th:value="${category.categoryID}"
                                 th:text="${category.categoryName}">

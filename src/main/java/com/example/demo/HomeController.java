@@ -101,8 +101,10 @@ public class HomeController {
     }
 
     @RequestMapping("/delete_category/{id}")
-    public String deleteCategory(@PathVariable("id") long id) {
+    public String deleteCategory(@PathVariable("id") long id, Model model) {
         categoryRepository.deleteById(id);
+        model.addAttribute("cars", carRepository.findAll());
+        model.addAttribute("categorys", categoryRepository.findAll());
         return "index";
     }
 
@@ -123,8 +125,12 @@ public class HomeController {
     }
 
     @RequestMapping("/delete_car/{id}")
-    public String deleteCar(@PathVariable("id") long id) {
+    public String deleteCar(@PathVariable("id") long id, Model model) {
         carRepository.deleteById(id);
-        return "index";
+
+        System.out.println("ID: " + id);
+        model.addAttribute("cars", carRepository.findAll());
+        model.addAttribute("categorys", categoryRepository.findAll());
+        return "redirect:/";
     }
 }
