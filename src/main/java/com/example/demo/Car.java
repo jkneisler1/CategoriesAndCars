@@ -28,6 +28,9 @@ public class Car {
         this.category = category;
     }
 
+    public Car() {
+    }
+
     public long getCarID() {
         return carID;
     }

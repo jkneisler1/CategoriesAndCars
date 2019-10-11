@@ -19,7 +19,7 @@ public class DataLoader implements CommandLineRunner {
         Car car;                // Make, Model, VIN, Price, Color, Year
 
         // First category and their cars
-        category = new Category("Sports Car", "Sports cars are designed to emphasise handling, performance or thrill of driving. Sports cars originated in Europe in the early 1900s, with one of the first recorded usages of the term \"sports car\" being in The Times newspaper in the United Kingdom in 1919.");
+        category = new Category("Sports Car", "Sports cars are designed to emphasise handling, performance or thrill of driving. Sports cars originated in Europe in the early 1900s, with one of the first recorded usages of the term \\\"sports car\\\" being in The Times newspaper in the UK in 1919.");
         categoryRepository.save(category);
 
         car = new Car("Chevrolet", "Corvette", "CC1001", 58900.0, "Red", 2020, category);
@@ -39,7 +39,7 @@ public class DataLoader implements CommandLineRunner {
 
 
         // Second category and their cars
-        category = new Category("Sedan", "Sedans are passenger cars separated into three distinct sections - engine, passenger, and cargo. Most sedans have them in that order from front to back, but a few models switch the engine and cargo sections. Vehicles that lack engines, such as some modern electric vehicles, tend to have front and rear cargo sections instead. Sedans always seat at least four people, and more often five, between two rows of seats. Sedans also have at least 33 cubic feet of rear interior volume - any smaller and the vehicle is a coupe instead, regardless of configuration or seating. The earliest modern Sedan began production in 1899");
+        category = new Category("Sedan", "Sedans are passenger cars separated into three distinct sections - engine, passenger, and cargo. Most sedans have them in that order from front to back. Sedans also have at least 33 cubic feet of rear interior volume.");
         categoryRepository.save(category);
 
         car = new Car("Toyota", "Camry", "TC4857", 24295.0, "Black", 2020, category);
@@ -53,7 +53,7 @@ public class DataLoader implements CommandLineRunner {
 
 
         // Third category and their cars
-        category = new Category("Truck", "Trucks are one of the oldest types of vehicles in existence, with their earliest version appearing in the 1800s and starting to take off past 1900 as the steam wagon. Throughout this time, trucks have remained true to their original purpose: carrying heavy cargo loads. The trucks most people think of when they hear the word are actually <i>light trucks</i>, car-sized vehicles meant for personal and small business use.");
+        category = new Category("Truck", "Trucks are one of the oldest types of vehicles, appearing in the 1800s and have remained true to their original purpose: carrying heavy cargo loads. Most trucks today are actually light trucks, car-sized vehicles meant for personal and small business use.");
         categoryRepository.save(category);
 
         car = new Car("Ford", "F150", "FF0348", 30000.0, "Red", 2020, category);
@@ -67,7 +67,7 @@ public class DataLoader implements CommandLineRunner {
 
 
         // Fourth category and their cars
-        category = new Category("Minivan", "Minivan is an American car classification for vehicles which are designed to transport passengers in the rear seating row(s), have reconfigurable seats in two or three rows. The equivalent terms in British English are Multi-purpose Vehicle (MPV), people carrier and people mover. Minivans often have a 'one-box' or 'two-box' body configuration, a high roof, a flat floor, a sliding door for rear passengers and high H-point seating.");
+        category = new Category("Minivan", "Minivan is an American car classification for vehicles which are designed to transport passengers in the rear seating row(s), have reconfigurable seats in two or three rows. Minivans often have a high roof, a flat floor, and a sliding door.");
         categoryRepository.save(category);
 
         car = new Car("Dodge", "Grand Caravan", "DGC958", 35000.0, "Black", 2020, category);
